@@ -42,7 +42,6 @@ function css() {
       .pipe(gulp.dest('./build/assets/css'));
   };
 
-
 function scripts() {
     return gulp.src('./js/*.js')
       .pipe(concat('scripts.min.js'))
