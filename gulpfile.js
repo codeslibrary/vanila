@@ -51,7 +51,11 @@ function scripts() {
 
 function imgmin(){
    return gulp.src('./images/*')
-        .pipe(imagemin())
+        .pipe(imagemin([
+          imagemin.gifsicle({interlaced: true}),
+          imagemin.jpegtran({progressive: true}),
+          imagemin.optipng({optimizationLevel: 5}), 
+         ]))
         .pipe(gulp.dest('./build/assets/img'))
 };
 
